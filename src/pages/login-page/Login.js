@@ -4,26 +4,26 @@ export default function Login() {
   return (
     <div>
       <Navigation />
-      <div class="credentials">
+      <div className="credentials">
         <h1>Login</h1>
-        <div class="cred__input-field">
+        <div className="cred__input-field">
           <label>Email adddress</label>
           <input placeholder="akash@neog.com" type="email"></input>
         </div>
-        <div class="cred__input-field">
+        <div className="cred__input-field">
           <label>Password</label>
           <input placeholder="password" type="password"></input>
         </div>
-        <div class="cred__remember-forgot">
-          <div class="remember__checkbox">
+        <div className="cred__remember-forgot">
+          <div className="remember__checkbox">
             <input type="checkbox" />
             <label>Remember me</label>
           </div>
-          <div class="forgot__password">Forgot your password?</div>
+          <div className="forgot__password">Forgot your password?</div>
         </div>
-        <button class="btn solid__primary cred__button">Login</button>
+        <button className="btn solid__primary cred__button">Login</button>
         <a href="signup.html">
-          <div class="create__new-account">
+          <div className="create__new-account">
             create new account <i class="bx bx-right-arrow-alt"></i>{" "}
           </div>
         </a>

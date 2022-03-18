@@ -5,9 +5,9 @@ export default function () {
   return (
     <div>
       <Navigation />
-      <div class="wishlist__main-container">
-        <h1 class="wishlist__main-heading">My Wishlist</h1>
-        <div class="grid__product wishlist">
+      <div className="wishlist__main-container">
+        <h1 className="wishlist__main-heading">My Wishlist</h1>
+        <div className="grid__product wishlist">
           <ProductCard/>
         </div>
       </div>

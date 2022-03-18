@@ -19,21 +19,21 @@ export default function HorizontalCard() {
 
   return (
     <div>
-      <div class="space__3rem"></div>
-      <div class="space__3rem"></div>
-      <h1 class="category__heading">DEALS ON TOP BRANDS</h1>
-      <div class="main__card-container">
+      <div className="space__3rem"></div>
+      <div className="space__3rem"></div>
+      <h1 className="category__heading">DEALS ON TOP BRANDS</h1>
+      <div className="main__card-container">
         {/* <!-- Milkyway UI Card --> */}
         {productData.map((item) => {
           return (
-            <div class="card">
-              <div class="card__container">
-                <div class="card__img">
+            <div className="card">
+              <div className="card__container">
+                <div className="card__img">
                   <img src={item.image} alt="card-img" class="card__img-c" />
                 </div>
-                <div class="card__name">
-                  <p class="card__charc-name">{item.title}</p>
-                  <p class="card__charc-series">Up To {item.discount} Off</p>
+                <div className="card__name">
+                  <p className="card__charc-name">{item.title}</p>
+                  <p className="card__charc-series">Up To {item.discount} Off</p>
                 </div>
               </div>
             </div>

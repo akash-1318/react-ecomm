@@ -4,40 +4,40 @@ import galaxy from '../../assets/images/galaxy.png'
 export default function Navigation() {
   return (
     <div>
-      <header class="header">
-        <div class="header__nav-left">
+      <header className="header">
+        <div className="header__nav-left">
           <img src={galaxy} alt="logo" />
-          <p class="logo__name">Milkyway</p>
+          <p className="logo__name">Milkyway</p>
         </div>
 
-        <div class="category__section">
+        <div className="category__section">
           <p>Men</p>
           <p>Women</p>
           <p>Kids</p>
           <p>Home & Living</p>
         </div>
 
-        <div class="header__nav-middle">
-          <div class="search__icon">
-            <i class="bx bx-search-alt-2"></i>
+        <div className="header__nav-middle">
+          <div className="search__icon">
+            <i className="bx bx-search-alt-2"></i>
           </div>
-          <input placeholder="search" class="header__search" />
+          <input placeholder="search" className="header__search" />
         </div>
 
-        <div class="header__nav-right">
-          <div class="header__icons">
-            <button class="btn solid__primary">Login</button>
-            <div class="icon__badge">
-              <i class="bx bx-heart"></i>
-              <span class="badge__content">5</span>
+        <div className="header__nav-right">
+          <div className="header__icons">
+            <button className="btn solid__primary">Login</button>
+            <div className="icon__badge">
+              <i className="bx bx-heart"></i>
+              <span className="badge__content">5</span>
             </div>
 
-            <div class="icon__badge">
-              <i class="bx bxs-cart-alt"></i>
-              <span class="badge__content">2</span>
+            <div className="icon__badge">
+              <i className="bx bxs-cart-alt"></i>
+              <span className="badge__content">2</span>
             </div>
 
-            <p class="cart__text">Cart</p>
+            <p className="cart__text">Cart</p>
           </div>
         </div>
       </header>

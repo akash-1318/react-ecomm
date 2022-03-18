@@ -6,9 +6,9 @@ export default function Cart() {
   return (
     <div>
       <Navigation />
-      <div class="mycart__main-container">
-        <h1 class="mycart__main-heading">My Cart (2)</h1>
-        <div class="mycart__product">
+      <div className="mycart__main-container">
+        <h1 className="mycart__main-heading">My Cart (2)</h1>
+        <div className="mycart__product">
           <div className="card__container">
             <DetailCard />
           </div>
