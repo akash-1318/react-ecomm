@@ -1,0 +1,14 @@
+.wishlist__main-container{
+    padding: 4rem 10rem;
+    height: 100vh;
+    background-color:var(--primary-backgroud-color);
+}
+
+.wishlist__main-heading{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.grid__product.wishlist{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
