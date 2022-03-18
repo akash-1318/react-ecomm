@@ -1,4 +1,5 @@
 import "./hero.css";
+import {Link} from 'react-router-dom'
 export default function Hero() {
   return (
     <div>
@@ -12,7 +13,7 @@ export default function Hero() {
           <div class="explore__text">
             {/* <!-- Milkyway UI Button --> */}
 
-            <button class="btn solid__primary">Explore+</button>
+            <Link to="/products"><button class="btn solid__primary">Explore+</button></Link>
           </div>
         </div>
       </div>
