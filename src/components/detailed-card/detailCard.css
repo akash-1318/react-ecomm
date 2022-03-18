@@ -1,0 +1,87 @@
+.product__name{
+    font-size: 2rem;
+}
+
+.selling__price{
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+.original__price{
+    font-weight: 200;
+    text-decoration: line-through;
+    color: var(--secondry-text-color);
+    margin-left: .5rem;
+    font-size: 2rem;
+}
+
+.off__price{
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondry-text-color);
+    margin-top: 1rem;
+}
+
+.quantity__div{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.number{
+    width: 5rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-secondry-color);
+    padding: .3rem;
+}
+
+.decrement, .increment{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--dark-secondry-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 1rem;
+    cursor: pointer;
+}
+
+.mycart__card-btn{
+    margin-top: 3rem;
+}
+
+.mycart__btn{
+    padding: 1rem 2rem;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card__cs.mycart{
+    width: 55rem;
+    padding: 0px;
+    margin-top: 0px;
+    background-color: white;
+}
+
+.card__img--cs.mycart{
+    height: auto;
+    width: 45%;
+}
+
+.card__name.mycart{
+    text-align: left;
+    padding: 3rem;
+}
+
+.solid__secondry.mycart, .secondry__ouline-btn.mycart{
+    border-radius: 0px;
+    width: 100%;
+    margin: 0rem 0rem 1rem 0rem;
+}
