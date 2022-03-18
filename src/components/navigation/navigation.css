@@ -1,0 +1,27 @@
+.header{
+    padding: 1rem 4rem;
+}
+
+.header__nav-right{
+    margin-left: 0px;
+}
+
+.header__nav-left{
+    cursor: pointer;
+}
+
+.category__section{
+    display: flex;
+}
+
+.category__section > p{
+    font-size: 1.5rem;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.category__section > p:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}

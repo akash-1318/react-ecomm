@@ -1,0 +1,51 @@
+.scroll__bar{
+    width: 100%;
+    height: 35rem;
+    background-image: url(../../assets/images/home-page2.jpg);
+    background-size: 65% 35rem;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.offer__text{
+    position: absolute;
+    width: 33%;
+    margin: auto;
+    text-align: center;
+}
+
+.primary__text{
+    font-size: 3.5rem;
+}
+
+.secondry__text{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.sale__text{
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+
+.offer__text > hr{
+    margin-top: 2rem;
+}
+
+.space__3rem{
+    height: 4rem;
+    width: 100%;
+}
+
+.explore__text{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 1rem;
+    color: var(--secondry-text-color);
+}
