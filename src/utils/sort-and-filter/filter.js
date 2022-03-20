@@ -20,8 +20,8 @@ const priceRangeFilter = (dataForFilter, priceRange) => {
 
 const categoryFilter = (categoryData,fastDelivery, arriving) => {
     return categoryData
-    .filter((prod) => fastDelivery ? prod.fastDelivery : true)
-    .filter((prod) => arriving ? prod.arrivingSoon : true)
+    .filter((prod) => fastDelivery ? prod.category.fastDelivery : true)
+    .filter((prod) => arriving ? prod.category.arrivingSoon : true)
 
 }
 
