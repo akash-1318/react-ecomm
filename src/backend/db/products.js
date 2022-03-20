@@ -3,6 +3,14 @@ import model1 from '../../assets/images/model1.jpg'
 import model2 from '../../assets/images/modal2.jpeg'
 import model3 from '../../assets/images/modal3.jpg'
 import model4 from '../../assets/images/model4.jpg'
+import femaleModel1 from '../../assets/images/female-model1.webp'
+import femaleModel2 from '../../assets/images/female-model2.webp'
+import femaleModel3 from '../../assets/images/female-model3.webp'
+import femaleModel4 from '../../assets/images/female-model4.webp'
+import kidModel1 from '../../assets/images/kid-model1.jpeg'
+import kidModel2 from '../../assets/images/kid-model2.webp'
+import kidModel3 from '../../assets/images/kid-model3.webp'
+import kidModel4 from '../../assets/images/kid-model4.webp'
 
 /**
  * Product Database can be added here.
@@ -36,12 +44,24 @@ import model4 from '../../assets/images/model4.jpg'
     title : "U.S POLO ASSN.",
     discount : "50%",
     image : model1 ,
+    price : 899,
+    rating : 4,
+    category : "Men",
+    name : "Denim Jacket",
+    fastDelivery : true,
+    arrivingSoon : true,
   },
   {
     _id: uuid(),
     title : "VERA MODA",
     discount : "30%",
     image : model2 ,
+    price : 599,
+    rating : 4,
+    category : "Men",
+    name : "Fit Checked Shirt",
+    fastDelivery : false,
+    arrivingSoon : true,
   },
   {
     _id: uuid(),
@@ -51,7 +71,13 @@ import model4 from '../../assets/images/model4.jpg'
     blonging : true,
     collection : "Winter Collection",
     arivalText : "New Arrival",
-    text : "Checkout our best winter Collection to stay hot in style this season."
+    text : "Checkout our best winter Collection to stay hot in style this season.",
+    price : 999,
+    rating : 3,
+    category : "Men",
+    name : "Formal Blazer",
+    fastDelivery : true,
+    arrivingSoon : false,
   },
   {
     _id: uuid(),
@@ -61,7 +87,113 @@ import model4 from '../../assets/images/model4.jpg'
     blonging : true,
     collection : "Summer Collection",
     arivalText : "New Arrival",
-    text : "Checkout our best summer Collection to stay cool in style this season."
+    text : "Checkout our best summer Collection to stay cool in style this season.",
+    price : 789,
+    rating : 5,
+    category : "Men",
+    name : "Cotton T-shirt",
+    fastDelivery : false,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "Manyavar",
+    discount : "60%",
+    image : femaleModel1 ,
+    price : 855,
+    rating : 4,
+    category : "Female",
+    name : "Ethinc Motifs Kurta",
+    fastDelivery : true,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "DRESS BERRY",
+    discount : "35%",
+    image : femaleModel2 ,
+    price : 679,
+    rating : 4,
+    category : "Female",
+    name : "Floral Printed Kurta",
+    fastDelivery : false,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "ANOUK",
+    discount : "10%",
+    image : femaleModel3 ,
+    collection : "Winter Collection",
+    price : 1249,
+    rating : 2,
+    category : "Female",
+    name : "Yoke Design Kurta",
+    fastDelivery : true,
+    arrivingSoon : false,
+  },
+  {
+    _id: uuid(),
+    title : "ONLY",
+    discount : "20%",
+    image : femaleModel4 ,
+    collection : "Summer Collection",
+    price : 1679,
+    rating : 2,
+    category : "Female",
+    name : "Sriped Straight Kurta",
+    fastDelivery : true,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "TOMMY HILFIGER",
+    discount : "60%",
+    image : kidModel1 ,
+    price : 749,
+    rating : 4,
+    category : "Kids",
+    name : "Girls Cotton T-shirt",
+    fastDelivery : true,
+    arrivingSoon : false,
+  },
+  {
+    _id: uuid(),
+    title : "H&M",
+    discount : "35%",
+    image : kidModel2 ,
+    price : 984,
+    rating : 1,
+    category : "Kids",
+    name : "Boys Black Jeans",
+    fastDelivery : false,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "MANGO KID",
+    discount : "10%",
+    image : kidModel3 ,
+    collection : "Winter Collection",
+    price : 1170,
+    rating : 3,
+    category : "Kids",
+    name : "Pocket T-shirt",
+    fastDelivery : true,
+    arrivingSoon : true,
+  },
+  {
+    _id: uuid(),
+    title : "MARKS AND SPENCER",
+    discount : "20%",
+    image : kidModel4 ,
+    collection : "Summer Collection",
+    price : 680,
+    rating : 1,
+    category : "Kids",
+    name : "Viscose Dress",
+    fastDelivery : true,
+    arrivingSoon : false,
   }
 ];
 

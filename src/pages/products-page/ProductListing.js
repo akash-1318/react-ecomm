@@ -6,7 +6,7 @@ export default function ProductListing() {
   return (
     <div>
       <Navigation />
-      <div class="product__main-container">
+      <div className="product__main-container">
         <Sidebar />
         <ProductSection />
       </div>
