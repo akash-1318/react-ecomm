@@ -78,3 +78,11 @@ a{
 .header__nav-right > :nth-child(1){
     color: var(--font-color);
 }
+
+.link__style{
+    color: var(--font-color);
+}
+/* 
+.link__style:hover{
+    color: var(--white-color);
+} */

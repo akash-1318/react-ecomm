@@ -1,6 +1,8 @@
 import "./hero.css";
 import {Link} from 'react-router-dom'
+import { useProductContext } from "../../contexts/product-context";
 export default function Hero() {
+  const {dispatch} = useProductContext()
   return (
     <div>
       <div className="space__3rem"></div>
@@ -13,7 +15,7 @@ export default function Hero() {
           <div className="explore__text">
             {/* <!-- Milkyway UI Button --> */}
 
-            <Link to="/products"><button className="btn solid__primary">Explore+</button></Link>
+            <Link to="/products"><button className="btn solid__primary" onClick = {() => dispatch({type : "ALL_TYPE", payload : ""})}>ExploreAll+</button></Link>
           </div>
         </div>
       </div>

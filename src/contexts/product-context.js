@@ -9,6 +9,7 @@ const initialStates = {
     priceRange : 2000,
     fastDelivery : false,
     arrivingSoon : false,
+    clothingType : "",
     products : [], 
 }
 

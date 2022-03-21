@@ -1,22 +1,10 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useProductContext } from "../../../contexts/product-context";
+import {Link} from 'react-router-dom'
 
 export default function VerticalCard() {
-  const [productData, setProductData] = useState([]);
-  const getProdData = async () => {
-    try {
-      const resp = await axios.get("/api/products");
-      console.log(resp.data.products);
-      const serverData = resp.data.products;
-      const arrivalData = serverData.filter((item) => item.blonging);
-      setProductData(arrivalData);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getProdData();
-  }, []);
+  const {state, dispatch} = useProductContext()
+  const {products} = state
+  const slicedProdcuts = products.slice(2,4)
 
   return (
     <div>
@@ -24,9 +12,12 @@ export default function VerticalCard() {
       <h1 className="category__heading">NEW ARRIVALS</h1>
       <div className="arrival__collection">
         {/* <!-- Milkyway UI Horizontal Card --> */}
-        {productData.map((item) => {
+        {slicedProdcuts.map((item) => {
           return (
-            <div className="card card__cs">
+            <Link to="/products" className="link__style">
+            <div className="card card__cs"
+            onClick = {() => dispatch({type : "ARRIVAL_CLOTHING_TYPE", payload : item.category.productType})}
+            >
               <div className="card__container card__container-horizontal">
                 <div className="card__img card__img--cs">
                   <img src={item.image} alt="card-img" className="card__img-c cs" />
@@ -40,6 +31,7 @@ export default function VerticalCard() {
                 </div>
               </div>
             </div>
+            </Link>
           );
         })}
         <div className="space__2rem"></div>

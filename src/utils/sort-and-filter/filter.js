@@ -18,11 +18,11 @@ const priceRangeFilter = (dataForFilter, priceRange) => {
     return dataForFilter.filter((prod) => Number(prod.price) <= priceRange)
 }
 
-const categoryFilter = (categoryData,fastDelivery, arriving) => {
+const categoryFilter = (categoryData,fastDelivery, arriving, clothingType) => {
     return categoryData
     .filter((prod) => fastDelivery ? prod.category.fastDelivery : true)
     .filter((prod) => arriving ? prod.category.arrivingSoon : true)
-
+    .filter((prod) => clothingType !== "" ? clothingType === prod.category.productType : true)
 }
 
 export {filterForRating, priceRangeFilter, categoryFilter}

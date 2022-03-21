@@ -14,14 +14,15 @@
     display: flex;
 }
 
-.category__section > p{
+.category__section > .nav__link-style > p{
     font-size: 1.5rem;
     padding: .8rem 2rem;
     cursor: pointer;
     border-radius: 4px;
+    color: var(--font-color);
 }
 
-.category__section > p:hover{
+.category__section > .nav__link-style > p:hover{
     background-color: var(--primary-color);
     color: var(--white-color);
 }

@@ -12,7 +12,7 @@ export default function Sidebar() {
         </div>
         <div className="space__2rem"></div>
         <div className="price__filter">
-          <h3>Price</h3>
+          <h3 onClick = {() => dispatch({type : "MEN_CLOTHING"})}>Price</h3>
           <div>
             <div className="amount__div">
               <p>0</p>
