@@ -27,6 +27,7 @@
     font-weight: 400;
     text-decoration: underline;
     text-underline-position: under;
+    cursor: pointer;
 }
 
 .slider {
