@@ -1,7 +1,6 @@
 .scroll__bar{
     width: 100%;
     height: 35rem;
-    background-image: url(../../assets/images/home-page2.jpg);
     background-size: 65% 35rem;
     background-repeat: no-repeat;
     position: relative;

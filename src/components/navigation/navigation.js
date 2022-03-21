@@ -1,12 +1,11 @@
 import './navigation.css'
-import galaxy from '../../assets/images/galaxy.png'
 
 export default function Navigation() {
   return (
     <div>
       <header className="header">
         <div className="header__nav-left">
-          <img src={galaxy} alt="logo" />
+          <img src="/assets/images/galaxy.png" alt="logo" />
           <p className="logo__name">Milkyway</p>
         </div>
 

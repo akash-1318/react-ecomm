@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div>
       <div className="space__3rem"></div>
-      <div className="scroll__bar">
+      <div className="scroll__bar" style = {{backgroundImage : `url(${process.env.PUBLIC_URL + 'assets/images/home-page2.jpg'})` }}>
         <div className="offer__text">
           <p className="primary__text">Milkyway Sale</p>
           <p className="secondry__text">Offers you will fall in love with</p>
