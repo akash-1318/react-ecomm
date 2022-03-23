@@ -1,5 +1,5 @@
 import "./cart.css";
-import Navigation from "../../components/navigation/Navigation";
+import {Navigation} from "../../components/navigation/navigation";
 import DetailCard from "../../components/detailed-card/DetailCard";
 import PriceDetail from "../../components/price-detail/PriceDetail";
 export default function Cart() {

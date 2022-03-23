@@ -1,5 +1,5 @@
 import "./wishlist.css";
-import Navigation from "../../components/navigation/Navigation";
+import {Navigation} from "../../components/navigation/navigation";
 import ProductCard from "../../components/product-card/ProductCard";
 export default function () {
   return (

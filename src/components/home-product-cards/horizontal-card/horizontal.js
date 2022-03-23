@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useProductContext } from "../../../contexts/product-context";
 import {Link} from "react-router-dom"
 
-export default function HorizontalCard() {
+function HorizontalCard() {
   const {state, dispatch} = useProductContext()
   const {products} = state
 
@@ -38,3 +38,5 @@ export default function HorizontalCard() {
     </div>
   );
 }
+
+export {HorizontalCard}

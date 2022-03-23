@@ -1,5 +1,5 @@
 import "../../styles/login&signup.css";
-import Navigation from "../../components/navigation/Navigation";
+import {Navigation} from "../../components/navigation/navigation";
 export default function SignUp() {
   return (
     <div>

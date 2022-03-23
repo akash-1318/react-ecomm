@@ -2,7 +2,7 @@ import './navigation.css'
 import {Link} from 'react-router-dom'
 import { useProductContext } from '../../contexts/product-context';
 
-export default function Navigation() {
+function Navigation() {
   const {dispatch} = useProductContext()
   return (
     <div>
@@ -48,3 +48,5 @@ export default function Navigation() {
     </div>
   );
 }
+
+export { Navigation }
