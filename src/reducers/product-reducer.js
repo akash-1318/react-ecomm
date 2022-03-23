@@ -12,6 +12,20 @@ const filterReducer = (state, action) => {
             return {...state, fastDelivery : !state.fastDelivery}
         case "ARRIVAL":
             return {...state, arrivingSoon : !state.arrivingSoon}
+        case "CLOTHING_TYPE":
+            return {...state, clothingType : action.payload}
+        case "ARRIVAL_CLOTHING_TYPE":
+            return {...state, clothingType : action.payload, arrivingSoon : true}
+        case "ALL_TYPE":
+            return {
+                ...state, 
+                clothingType : action.payload,
+                sortByPrice : null,
+                filterByRating : null,
+                priceRange : 2000,
+                fastDelivery : false,
+                arrivingSoon : false,
+            }
         case "CLEAR_ALL":
             return {
                 ...state,

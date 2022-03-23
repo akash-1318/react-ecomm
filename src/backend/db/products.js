@@ -13,8 +13,9 @@ import { v4 as uuid } from "uuid";
     image : "/assets/images/model1.jpg",
     price : 899,
     rating : 4,
-    category : {fastDelivery : true, arrivingSoon : true},
+    category : {fastDelivery : true, arrivingSoon : true, productType : "Men"},
     name : "Denim Jacket",
+    homeVisibility : true
   },
   {
     _id: uuid(),
@@ -23,7 +24,7 @@ import { v4 as uuid } from "uuid";
     image : '/assets/images/modal2.jpeg' ,
     price : 599,
     rating : 4,
-    category : {fastDelivery : false, arrivingSoon : true},
+    category : {fastDelivery : false, arrivingSoon : true, productType : "Men"},
     name : "Fit Checked Shirt",
   },
   {
@@ -37,7 +38,7 @@ import { v4 as uuid } from "uuid";
     text : "Checkout our best winter Collection to stay hot in style this season.",
     price : 999,
     rating : 3,
-    category : {fastDelivery : true, arrivingSoon : false},
+    category : {fastDelivery : true, arrivingSoon : false, productType : "Men"},
     name : "Formal Blazer",
   },
   {
@@ -51,8 +52,9 @@ import { v4 as uuid } from "uuid";
     text : "Checkout our best summer Collection to stay cool in style this season.",
     price : 789,
     rating : 5,
-    category : {fastDelivery : false, arrivingSoon : true},
+    category : {fastDelivery : false, arrivingSoon : true, productType : "Men"},
     name : "Cotton T-shirt",
+    homeVisibility : true
   },
   {
     _id: uuid(),
@@ -61,7 +63,7 @@ import { v4 as uuid } from "uuid";
     image : '/assets/images/female-model1.webp' ,
     price : 855,
     rating : 4,
-    category : {fastDelivery : true, arrivingSoon : true},
+    category : {fastDelivery : true, arrivingSoon : true, productType : "Women"},
     name : "Ethinc Motifs Kurta",
   },
   {
@@ -71,8 +73,9 @@ import { v4 as uuid } from "uuid";
     image : '/assets/images/female-model2.webp' ,
     price : 679,
     rating : 4,
-    category : {fastDelivery : false, arrivingSoon : true},
+    category : {fastDelivery : false, arrivingSoon : true, productType : "Women"},
     name : "Floral Printed Kurta",
+    homeVisibility : true
   },
   {
     _id: uuid(),
@@ -82,7 +85,7 @@ import { v4 as uuid } from "uuid";
     collection : "Winter Collection",
     price : 1249,
     rating : 2,
-    category : {fastDelivery : true, arrivingSoon : false},
+    category : {fastDelivery : true, arrivingSoon : false, productType : "Women"},
     name : "Yoke Design Kurta",
   },
   {
@@ -93,7 +96,7 @@ import { v4 as uuid } from "uuid";
     collection : "Summer Collection",
     price : 1679,
     rating : 2,
-    category : {fastDelivery : true, arrivingSoon : true},
+    category : {fastDelivery : true, arrivingSoon : true, productType : "Women"},
     name : "Sriped Straight Kurta",
     fastDelivery : true,
     arrivingSoon : true,
@@ -105,7 +108,7 @@ import { v4 as uuid } from "uuid";
     image : '/assets/images/kid-model1.jpeg' ,
     price : 749,
     rating : 4,
-    category : {fastDelivery : true, arrivingSoon : false},
+    category : {fastDelivery : true, arrivingSoon : false, productType : "Kids"},
     name : "Girls Cotton T-shirt",
   },
   {
@@ -115,7 +118,7 @@ import { v4 as uuid } from "uuid";
     image : '/assets/images/kid-model2.webp' ,
     price : 984,
     rating : 1,
-    category : {fastDelivery : false, arrivingSoon : true},
+    category : {fastDelivery : false, arrivingSoon : true, productType : "Kids"},
     name : "Boys Black Jeans",
   },
   {
@@ -126,8 +129,9 @@ import { v4 as uuid } from "uuid";
     collection : "Winter Collection",
     price : 1170,
     rating : 3,
-    category : {fastDelivery : true, arrivingSoon : true},
+    category : {fastDelivery : true, arrivingSoon : true, productType : "Kids"},
     name : "Pocket T-shirt",
+    homeVisibility : true
   },
   {
     _id: uuid(),
@@ -137,7 +141,7 @@ import { v4 as uuid } from "uuid";
     collection : "Summer Collection",
     price : 680,
     rating : 1,
-    category : {fastDelivery : true, arrivingSoon : false},
+    category : {fastDelivery : true, arrivingSoon : false, productType : "Kids"},
     name : "Viscose Dress",
   }
 ];

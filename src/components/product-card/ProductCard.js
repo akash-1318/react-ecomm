@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import "./productCard.css";
 import {useProductContext} from '../../contexts/product-context';
 import {sortForPrice} from '../../utils/sort-and-filter/sort';
@@ -8,11 +6,11 @@ import { filterForRating, priceRangeFilter, categoryFilter } from "../../utils/s
 export default function ProductCard() {
   
   const {state} = useProductContext()
-  const {products,sortByPrice, filterByRating, priceRange, fastDelivery, arrivingSoon} = state
+  const {products,sortByPrice, filterByRating, priceRange, fastDelivery, arrivingSoon, clothingType} = state
   const sortedData = sortForPrice(products, sortByPrice)
   const filterRating = filterForRating(sortedData, filterByRating)
   const filteredData = priceRangeFilter(filterRating, priceRange)
-  const finalFilter = categoryFilter(filteredData,fastDelivery, arrivingSoon)
+  const finalFilter = categoryFilter(filteredData,fastDelivery, arrivingSoon, clothingType)
   return (
     <>
     {finalFilter.map((item)=>{

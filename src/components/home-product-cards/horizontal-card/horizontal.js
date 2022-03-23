@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-// import { productCard } from "../../../backend/db/products";
+import { useProductContext } from "../../../contexts/product-context";
+import {Link} from "react-router-dom"
 
 export default function HorizontalCard() {
-  const [productData, setProductData] = useState([]);
-  const getProdData = async () => {
-    try {
-      const resp = await axios.get("/api/products");
-      console.log(resp);
-      setProductData(resp.data.products);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getProdData();
-  }, []);
+  const {state, dispatch} = useProductContext()
+  const {products} = state
+
+  const homeProducts = products.filter((item) => item.homeVisibility)
 
   return (
     <div>
@@ -24,9 +15,12 @@ export default function HorizontalCard() {
       <h1 className="category__heading">DEALS ON TOP BRANDS</h1>
       <div className="main__card-container">
         {/* <!-- Milkyway UI Card --> */}
-        {productData.map((item) => {
+        {homeProducts.map((item) => {
           return (
-            <div className="card">
+            <Link to="/products" className="link__style">
+            <div className="card" 
+            onClick = {() => dispatch({type : "CLOTHING_TYPE", payload : item.category.productType})}
+            >
               <div className="card__container">
                 <div className="card__img">
                   <img src={item.image} alt="card-img" class="card__img-c" />
@@ -37,6 +31,7 @@ export default function HorizontalCard() {
                 </div>
               </div>
             </div>
+            </Link> 
           );
         })}
       </div>

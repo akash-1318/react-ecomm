@@ -1,19 +1,24 @@
 import './navigation.css'
+import {Link} from 'react-router-dom'
+import { useProductContext } from '../../contexts/product-context';
 
 export default function Navigation() {
+  const {dispatch} = useProductContext()
   return (
     <div>
       <header className="header">
+        <Link to="/">
         <div className="header__nav-left">
           <img src="/assets/images/galaxy.png" alt="logo" />
           <p className="logo__name">Milkyway</p>
         </div>
+        </Link>
 
         <div className="category__section">
-          <p>Men</p>
-          <p>Women</p>
-          <p>Kids</p>
-          <p>Home & Living</p>
+          <Link to = "/products" className = "nav__link-style" onClick = {() => dispatch({type : "CLOTHING_TYPE", payload : "Men"})}><p>Men</p></Link>
+          <Link to = "/products" className = "nav__link-style" onClick = {() => dispatch({type : "CLOTHING_TYPE", payload : "Women"})}><p>Women</p></Link>
+          <Link to = "/products" className = "nav__link-style" onClick = {() => dispatch({type : "CLOTHING_TYPE", payload : "Kids"})}><p>Kids</p></Link>
+          <Link to = "" className = "nav__link-style"><p>Home & Living</p></Link>
         </div>
 
         <div className="header__nav-middle">
