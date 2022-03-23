@@ -13,7 +13,7 @@ const filterReducer = (state, action) => {
         case "ARRIVAL":
             return {...state, arrivingSoon : !state.arrivingSoon}
         case "CLOTHING_TYPE":
-            return {...state, clothingType : action.payload}
+            return {...state, clothingType : action.payload, arrivingSoon : false}
         case "ARRIVAL_CLOTHING_TYPE":
             return {...state, clothingType : action.payload, arrivingSoon : true}
         case "ALL_TYPE":

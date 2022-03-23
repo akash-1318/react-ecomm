@@ -8,7 +8,7 @@ export default function () {
       <div className="wishlist__main-container">
         <h1 className="wishlist__main-heading">My Wishlist</h1>
         <div className="grid__product wishlist">
-          <ProductCard/>
+          {/* <ProductCard/> */}
         </div>
       </div>
     </div>

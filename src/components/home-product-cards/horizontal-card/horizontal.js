@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
 import { useProductContext } from "../../../contexts/product-context";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 function HorizontalCard() {
   const {state, dispatch} = useProductContext()
   const {products} = state
 
   const homeProducts = products.filter((item) => item.homeVisibility)
-
+  const navigate = useNavigate();
   return (
     <div>
       <div className="space__3rem"></div>
@@ -17,9 +16,11 @@ function HorizontalCard() {
         {/* <!-- Milkyway UI Card --> */}
         {homeProducts.map((item) => {
           return (
-            <Link to="/products" className="link__style">
             <div className="card" 
-            onClick = {() => dispatch({type : "CLOTHING_TYPE", payload : item.category.productType})}
+            onClick = {() => {
+              dispatch({type : "CLOTHING_TYPE", payload : item.category.productType})
+              navigate('/products')
+            }}
             >
               <div className="card__container">
                 <div className="card__img">
@@ -31,7 +32,6 @@ function HorizontalCard() {
                 </div>
               </div>
             </div>
-            </Link> 
           );
         })}
       </div>
@@ -40,3 +40,6 @@ function HorizontalCard() {
 }
 
 export {HorizontalCard}
+
+
+// () => dispatch({type : "CLOTHING_TYPE", payload : item.category.productType})
