@@ -1,9 +1,11 @@
 import './navigation.css'
 import {Link} from 'react-router-dom'
 import { useProductContext } from '../../contexts/product-context';
+import {useWishContext} from '../../contexts/wishlist-context'
 
 function Navigation() {
   const {dispatch} = useProductContext()
+  const {wishState} = useWishContext()
   return (
     <div>
       <header className="header">
@@ -31,10 +33,10 @@ function Navigation() {
         <div className="header__nav-right">
           <div className="header__icons">
             <button className="btn solid__primary">Login</button>
-            <div className="icon__badge">
+            <Link to="/wishlist"><div className="icon__badge">
               <i className="bx bx-heart"></i>
-              <span className="badge__content">5</span>
-            </div>
+              <span className="badge__content">{wishState.wishlistProducts.length}</span>
+            </div></Link> 
 
             <div className="icon__badge">
               <i className="bx bxs-cart-alt"></i>
