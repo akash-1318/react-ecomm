@@ -10,5 +10,14 @@
 }
 
 .grid__product.wishlist{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.empty__wish-div{
+    display: flex;
+    justify-content: center;
+}
+
+.wishlist__empty{
+    height: 50rem;
 }
