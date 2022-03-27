@@ -1,11 +1,16 @@
 import './navigation.css'
 import {Link} from 'react-router-dom'
 import { useProductContext } from '../../contexts/product-context';
-import {useWishContext} from '../../contexts/wishlist-context'
+import {useWishContext} from '../../contexts/wishlist-context';
+import {useCartContext} from "../../contexts/cart-context"
 
 function Navigation() {
   const {dispatch} = useProductContext()
   const {wishState} = useWishContext()
+  const {cartState} = useCartContext()
+  const {cartProducts} = cartState
+  const qunatityReducer = (previousProd, currentProd) => currentProd.quantity + previousProd
+  const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0)
   return (
     <div>
       <header className="header">
@@ -38,10 +43,12 @@ function Navigation() {
               <span className="badge__content">{wishState.wishlistProducts.length}</span>
             </div></Link> 
 
+            <Link to="/cart">
             <div className="icon__badge">
               <i className="bx bxs-cart-alt"></i>
-              <span className="badge__content">2</span>
+              <span className="badge__content">{cartProductQuantity}</span>
             </div>
+            </Link>
 
             <p className="cart__text">Cart</p>
           </div>
