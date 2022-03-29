@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./pages/home/Home";
+import Home from "./pages/home/home";
 import ProductListing from "./pages/products-page/ProductListing";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
