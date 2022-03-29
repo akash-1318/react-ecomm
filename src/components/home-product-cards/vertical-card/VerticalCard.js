@@ -31,7 +31,7 @@ export default function VerticalCard() {
                     <img
                       src={item.image}
                       alt="card-img"
-                      className="card__img-c cs"
+                      className="card__img-c cs home__cs"
                     />
                   </div>
                   <div className="card__name name__cs">

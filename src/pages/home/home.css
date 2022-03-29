@@ -94,6 +94,10 @@
     border-radius: 0px;
 }
 
+.card__img-c.cs.home__cs{
+    height: 100%;
+}
+
 .card__container-horizontal{
     height: auto;
 }
