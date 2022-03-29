@@ -8,10 +8,6 @@ export default function ProductCard({ product }) {
   const {cartProducts} = cartState
   const { wishlistProducts } = wishState;
   
-  const testFunc = () => {
-    cartProducts.filter((item) => item.name === "Denim Jacket" ? console.log("hello") : console.log("bello"))
-  }
-
   return (
     <>
       <div className="card prod__card">
@@ -43,19 +39,19 @@ export default function ProductCard({ product }) {
           )}
 
           <div className="card__name prod__card-name">
-            <p className="card__charc-name prod__charc-name" onClick = {testFunc}>{product.name}</p>
+            <p className="card__charc-name prod__charc-name">{product.name}</p>
             <p className="card__charc-series prod__charc-series">
               ₹ {product.price}
             </p>
-            {cartProducts.find((cartProd) => cartProd._id === product._id) ? (<>
+            {cartProducts.find((cartProd) => cartProd._id === product._id) ? (
               <button className="btn solid__primary prod__card-btn" onClick={() => cartDispatch({type : "REMOVE_FROM_CART", payload : product})}>
               Remove From Cart
             </button>
-            </>) : (<>
+            ) : (
               <button className="btn solid__secondry prod__card-btn" onClick={() => cartDispatch({type : "ADD_TO_CART", payload : product})}>
               Add To Cart
             </button>
-            </>)}
+            )}
             
           </div>
         </div>

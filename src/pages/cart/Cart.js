@@ -20,7 +20,7 @@ export default function Cart() {
             <div className="card__container">
             {cartProducts.map((product) => {
               return (
-                <DetailCard prod = {product} />
+                <DetailCard key = {product._id} prod = {product} />
               )
             })}
           </div>
