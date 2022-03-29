@@ -1,5 +1,17 @@
 import './priceDetail.css'
+import { useCartContext } from '../../contexts/cart-context';
+
 export default function PriceDetail() {
+  const {cartState, cartDispatch} = useCartContext()
+  const {cartProducts} = cartState
+
+  const amountReducer = (previousAmount, currentAmount) => previousAmount + (currentAmount.price * currentAmount.quantity)
+  const cartTotalAmount = cartProducts.reduce(amountReducer, 0)
+
+  const qunatityReducer = (previousProd, currentProd) => currentProd.quantity + previousProd
+  const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0)
+
+
   return (
     <div className="mycart__product-right">
       <h2>Price Details</h2>
@@ -7,25 +19,25 @@ export default function PriceDetail() {
       <div className="product__price-discount">
         <div className="product__price-desc">
           <div className="desc__div">
-            <p>Price (2 items)</p>
-            <p>₹4999</p>
+            <p>Price ({cartProductQuantity} items)</p>
+            <p>₹{cartTotalAmount}</p>
           </div>
           <div className="desc__div">
             <p>Discount</p>
-            <p>-₹1999</p>
+            <p>-₹0</p>
           </div>
           <div className="desc__div">
             <p>Delivery Charges</p>
-            <p>₹499</p>
+            <p>₹0</p>
           </div>
           <hr />
           <div className="desc__div total__amount">
             <p>Total Amount</p>
-            <p>₹3499</p>
+            <p>₹{cartTotalAmount}</p>
           </div>
         </div>
         <hr />
-        <p className="save__price-text">You will save ₹1999 on this order</p>
+        <p className="save__price-text">You will save ₹0 on this order</p>
 
         {/* <!-- Milkyway UI Button --> */}
 

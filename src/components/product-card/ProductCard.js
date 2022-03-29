@@ -1,9 +1,13 @@
 import "./productCard.css";
 import { useWishContext } from "../../contexts/wishlist-context";
+import { useCartContext } from "../../contexts/cart-context";
 
 export default function ProductCard({ product }) {
   const { wishState, wishDispatch } = useWishContext();
-  const { wishlistProducts, wishlisted } = wishState;
+  const {cartState, cartDispatch} = useCartContext();
+  const {cartProducts} = cartState
+  const { wishlistProducts } = wishState;
+  
   return (
     <>
       <div className="card prod__card">
@@ -39,9 +43,16 @@ export default function ProductCard({ product }) {
             <p className="card__charc-series prod__charc-series">
               ₹ {product.price}
             </p>
-            <button className="btn solid__secondry prod__card-btn">
+            {cartProducts.find((cartProd) => cartProd._id === product._id) ? (
+              <button className="btn solid__primary prod__card-btn" onClick={() => cartDispatch({type : "REMOVE_FROM_CART", payload : product})}>
+              Remove From Cart
+            </button>
+            ) : (
+              <button className="btn solid__secondry prod__card-btn" onClick={() => cartDispatch({type : "ADD_TO_CART", payload : product})}>
               Add To Cart
             </button>
+            )}
+            
           </div>
         </div>
       </div>

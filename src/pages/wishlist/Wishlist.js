@@ -3,17 +3,15 @@ import {Navigation} from "../../components/navigation/navigation";
 import ProductCard from "../../components/product-card/ProductCard";
 import { useWishContext } from "../../contexts/wishlist-context";
 
-export default function () {
+export default function Wishlist() {
   const {wishState} = useWishContext()
   const {wishlistProducts, wishlisted} = wishState
-  const testFunc = () => {
-    console.log(wishlistProducts)
-  }
+  
   return (
     <div>
       <Navigation />
       <div className="wishlist__main-container">
-        <h1 className="wishlist__main-heading" onClick = {testFunc}>My Wishlist</h1>
+        <h1 className="wishlist__main-heading">My Wishlist</h1>
         {wishlistProducts.length !== 0 ? (
           <div className="grid__product wishlist">
           {wishlistProducts.map((product) => {

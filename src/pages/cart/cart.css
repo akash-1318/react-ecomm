@@ -1,7 +1,7 @@
 .mycart__main-container{
     padding: 0rem 20rem;
     background-color: var(--primary-backgroud-color);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .mycart__main-heading{
