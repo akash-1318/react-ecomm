@@ -2,9 +2,11 @@ import './navigation.css'
 import {Link} from 'react-router-dom'
 import { useProductContext } from '../../contexts/product-context';
 import {useWishContext} from '../../contexts/wishlist-context';
-import {useCartContext} from "../../contexts/cart-context"
+import {useCartContext} from "../../contexts/cart-context";
+import {useAuthContext} from "../../contexts/auth-context"
 
 function Navigation() {
+  const {authCred : {authToken, authStatus}} = useAuthContext()
   const {dispatch} = useProductContext()
   const {wishState} = useWishContext()
   const {cartState} = useCartContext()
@@ -37,7 +39,15 @@ function Navigation() {
 
         <div className="header__nav-right">
           <div className="header__icons">
-            <button className="btn solid__primary">Login</button>
+            {authStatus ? (
+              <>
+              <button class="btn solid__primary logout__btn">Log Out</button>
+              </>
+            ) : (
+              <>
+              <Link to="/login"><button className="btn solid__primary">Login</button></Link>
+              </>
+            )}
             <Link to="/wishlist"><div className="icon__badge">
               <i className="bx bx-heart"></i>
               <span className="badge__content">{wishState.wishlistProducts.length}</span>
