@@ -6,7 +6,7 @@ import { useWishContext } from "../../contexts/wishlist-context";
 export default function Wishlist() {
   const {wishState} = useWishContext()
   const {wishlistProducts, wishlisted} = wishState
-  
+  console.log(wishlistProducts)
   return (
     <div>
       <Navigation />

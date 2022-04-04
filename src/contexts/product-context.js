@@ -21,6 +21,7 @@ const ProductContextProvider = ({children}) => {
             try{
                 const {data : {products}} = await axios.get('/api/products')
                 dispatch({type : "SET_PRODUCTS", payload: products})
+                console.log(products)
             } catch(err){
                 console.log(err)
             }
