@@ -4,8 +4,8 @@ const AuthContext = createContext()
 
 const AuthContextProvider = ({children}) => {
     const [authCred, setAuthCred] = useState({
-        authToken : null,
-        authStatus : null,
+        authToken : localStorage.getItem("TOKEN"),
+        authStatus : localStorage.getItem("TOKEN") ? true : false,
     })
     return(
         <AuthContext.Provider value = {{authCred, setAuthCred}}>

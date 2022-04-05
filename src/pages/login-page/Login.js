@@ -20,9 +20,10 @@ export default function Login() {
         email: email,
         password: password,
       })
+      localStorage.setItem("TOKEN", encodedToken)
       setAuthCred({...authCred, 
         authToken : encodedToken,
-        authStatus : encodedToken ? true : false,
+        authStatus : true
       })
       navigate("/")
     } catch(err){

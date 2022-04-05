@@ -24,7 +24,6 @@ const CartContextProvider = ({children}) => {
                             authorization: authCred.authToken,
                         }
                     })
-                    console.log(data.data.cart)
                     cartDispatch({type : "ADD_TO_CART", payload : data.data.cart})
                 } catch(err){
                     console.log(err)
