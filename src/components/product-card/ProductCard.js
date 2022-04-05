@@ -78,7 +78,6 @@ export default function ProductCard({ product }) {
               Add To Cart
             </button>
             )}
-            
           </div>
         </div>
       </div>
