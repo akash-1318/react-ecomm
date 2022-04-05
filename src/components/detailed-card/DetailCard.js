@@ -1,11 +1,19 @@
 import "./detailCard.css";
 import { useCartContext } from "../../contexts/cart-context";
 import { useWishContext } from "../../contexts/wishlist-context";
+import { useAuthContext } from "../../contexts/auth-context";
+import {addtoCart, removeFromCart, updateQty} from "../../pages/cart/cart-functions"
+import {addToWishlist, deleteWishlistData} from "../../pages/wishlist/wishlist-functions"
+import { product } from "prelude-ls";
+import { useEffect, useState } from "react";
 
 export default function DetailCard({ prod }) {
+  const [qty, setQty] = useState(1)
+  const {authCred} = useAuthContext()
+  const {authToken, authStatus} = authCred
   const { cartState, cartDispatch } = useCartContext();
   const { wishState, wishDispatch } = useWishContext();
-  const { quantity } = cartState;
+  const { quantity, detailedCart } = cartState;
   const { wishlistProducts } = wishState;
 
   return (
@@ -25,23 +33,26 @@ export default function DetailCard({ prod }) {
             <p className="off__price">0 % Off</p>
             <div className="quantity__div">
               Quantity :
-              <div
+              <button
                 className="decrement"
+                disabled = {prod.qty === 1}
                 onClick={() =>
-                  cartDispatch({ type: "DECREMENT", payload: prod })
+                  updateQty("decrement", prod, cartDispatch, authToken)
                 }
               >
                 <i className="bx bx-minus"></i>
+              </button>
+              <div className="number">
+                {prod.qty}
               </div>
-              <div className="number">{prod.quantity}</div>
-              <div
+              <button
                 className="increment"
                 onClick={() =>
-                  cartDispatch({ type: "INCREMENT", payload: prod })
+                  updateQty("increment", prod, cartDispatch, authToken)
                 }
               >
                 <i className="bx bx-plus"></i>
-              </div>
+              </button>
             </div>
             <div className="mycart__card-btn">
               {/* <!-- Milkyway UI Buttons --> */}
@@ -49,11 +60,21 @@ export default function DetailCard({ prod }) {
               <button
                 className="btn solid__secondry mycart"
                 onClick={() =>
-                  cartDispatch({ type: "REMOVE_FROM_CART", payload: prod })
+                  removeFromCart(prod, cartDispatch, authToken)
                 }
               >
                 Remove from cart
               </button>
+
+              {wishState.wishlistProducts.find((item) => item._id === prod._id ) ? (
+                <button class="btn secondry__ouline-btn mycart"
+                onClick = {() => deleteWishlistData(prod,wishDispatch,authToken)}
+                >Remove from Wishlist</button>
+              ) : (
+                <button class="btn secondry__ouline-btn mycart"
+              onClick = {() => addToWishlist(prod,wishDispatch,authToken)}
+              >Move to Wishlist</button>
+              )}
             </div>
           </div>
         </div>

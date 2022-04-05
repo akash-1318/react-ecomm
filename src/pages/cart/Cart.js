@@ -7,7 +7,7 @@ import {useCartContext} from "../../contexts/cart-context"
 export default function Cart() {
   const {cartState, cartDispatch} = useCartContext()
   const {cartProducts} = cartState
-  const qunatityReducer = (previousProd, currentProd) => currentProd.quantity + previousProd
+  const qunatityReducer = (previousProd, currentProd) => currentProd.qty + previousProd
   const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0)
   return (
     <div>

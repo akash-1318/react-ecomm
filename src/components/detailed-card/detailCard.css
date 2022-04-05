@@ -73,14 +73,15 @@
 
 .card__img--cs.mycart{
     height: auto;
-    width: 45%;
+    width: 50%;
 }
 
 .card__name.mycart{
     text-align: left;
-    padding: 0rem 4rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
+    width: 65%;
 }
 
 .solid__secondry.mycart, .secondry__ouline-btn.mycart{
