@@ -32,7 +32,7 @@ const addtoCart = async(product, cartDispatch, authToken) => {
       try{
           const incrementData = await axios.post(`/api/user/cart/${product._id}`,
           {
-              action : { type: type }
+              action : { type }
           },
           {
               headers : {authorization: authToken}

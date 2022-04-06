@@ -59,14 +59,12 @@ export default function ProductCard({ product }) {
             </p>
             {cartProducts.find((cartProd) => cartProd._id === product._id) ? (
               <button className="btn solid__primary prod__card-btn" 
-              // onClick={() => cartDispatch({type : "REMOVE_FROM_CART", payload : product})}
               onClick = {() => removeFromCart(product, cartDispatch, authToken)}
               >
               Remove From Cart
             </button>
             ) : (
               <button className="btn solid__secondry prod__card-btn" 
-              // onClick={() => cartDispatch({type : "ADD_TO_CART", payload : product})}
               onClick={() => {
                 if(authStatus){
                   addtoCart(product, cartDispatch, authToken)
