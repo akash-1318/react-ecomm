@@ -8,24 +8,29 @@ import { useAuthContext } from "../../contexts/auth-context";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [passwordType, setPasswordType] = useState(true)
   const { authCred, setAuthCred } = useAuthContext();
   const [loginCred, setLoginCred] = useState({
     email: "",
     password: "",
   });
   const loginHandler = async ({ email, password }) => {
-    try {
-      const {
-        data: { encodedToken },
-      } = await axios.post("/api/auth/login", {
-        email: email,
-        password: password,
-      });
-      localStorage.setItem("TOKEN", encodedToken);
-      setAuthCred({ ...authCred, authToken: encodedToken, authStatus: true });
-      navigate("/");
-    } catch (err) {
-      console.log(err);
+    if(email !== "" && password !== ""){
+      try {
+        const {
+          data: { encodedToken },
+        } = await axios.post("/api/auth/login", {
+          email: email,
+          password: password,
+        });
+        localStorage.setItem("TOKEN", encodedToken);
+        setAuthCred({ ...authCred, authToken: encodedToken, authStatus: true });
+        navigate("/");
+      } catch (err) {
+        console.log(err);
+      }
+    } else{
+      alert("Please fill out the fields")
     }
   };
 
@@ -50,15 +55,20 @@ export default function Login() {
               }
             ></input>
           </div>
-          <div className="cred__input-field">
+          <div className="cred__input-field password__field">
             <label>Password</label>
             <input
               placeholder="password"
-              type="password"
+              type={passwordType ? "password" : "text"}
               onChange={(e) =>
                 setLoginCred({ ...loginCred, password: e.target.value })
               }
             ></input>
+            {passwordType ? (
+              <i className="bx bx-show" onClick = {() => setPasswordType(!passwordType)}></i>
+            ) : (
+              <i class='bx bx-hide' onClick = {() => setPasswordType(!passwordType)}></i>
+            )}
           </div>
           <div className="cred__remember-forgot">
             <div className="remember__checkbox">
