@@ -9,7 +9,7 @@ const WishlistProvider = ({ children }) => {
   const { authCred } = useAuthContext();
   const [wishState, wishDispatch] = useReducer(wishlistReducer, {
     wishlistProducts: [],
-    productCount : 0,
+    productCount: 0,
   });
 
   useEffect(() => {
@@ -21,14 +21,17 @@ const WishlistProvider = ({ children }) => {
               authorization: authCred.authToken,
             },
           });
-          wishDispatch({ type: "ADD_TO_WISHLIST", payload: data.data.wishlist });
+          wishDispatch({
+            type: "ADD_TO_WISHLIST",
+            payload: data.data.wishlist,
+          });
         } catch (err) {
           console.log(err);
         }
       };
       getWishlistData();
     }
-  },[wishState.productCount]);
+  }, [wishState.productCount]);
 
   return (
     <wishContext.Provider value={{ wishState, wishDispatch }}>

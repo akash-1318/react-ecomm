@@ -1,16 +1,17 @@
-import './priceDetail.css'
-import { useCartContext } from '../../contexts/cart-context';
+import "./priceDetail.css";
+import { useCartContext } from "../../contexts/cart-context";
 
 export default function PriceDetail() {
-  const {cartState, cartDispatch} = useCartContext()
-  const {cartProducts} = cartState
+  const { cartState, cartDispatch } = useCartContext();
+  const { cartProducts } = cartState;
 
-  const amountReducer = (previousAmount, currentAmount) => previousAmount + (currentAmount.price * currentAmount.qty)
-  const cartTotalAmount = cartProducts.reduce(amountReducer, 0)
+  const amountReducer = (previousAmount, currentAmount) =>
+    previousAmount + currentAmount.price * currentAmount.qty;
+  const cartTotalAmount = cartProducts.reduce(amountReducer, 0);
 
-  const qunatityReducer = (previousProd, currentProd) => currentProd.qty + previousProd
-  const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0)
-
+  const qunatityReducer = (previousProd, currentProd) =>
+    currentProd.qty + previousProd;
+  const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0);
 
   return (
     <div className="mycart__product-right">
@@ -41,7 +42,9 @@ export default function PriceDetail() {
 
         {/* <!-- Milkyway UI Button --> */}
 
-        <button className="btn solid__primary place__order-btn">Place Order</button>
+        <button className="btn solid__primary place__order-btn">
+          Place Order
+        </button>
       </div>
     </div>
   );
