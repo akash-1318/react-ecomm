@@ -15,7 +15,6 @@ export default function Login() {
     password: "",
   });
   const loginHandler = async ({ email, password }) => {
-    if(email !== "" && password !== ""){
       try {
         const {
           data: { encodedToken },
@@ -29,9 +28,6 @@ export default function Login() {
       } catch (err) {
         console.log(err);
       }
-    } else{
-      alert("Please fill out the fields")
-    }
   };
 
   return (
