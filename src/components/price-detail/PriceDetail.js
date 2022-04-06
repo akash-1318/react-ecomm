@@ -5,10 +5,10 @@ export default function PriceDetail() {
   const {cartState, cartDispatch} = useCartContext()
   const {cartProducts} = cartState
 
-  const amountReducer = (previousAmount, currentAmount) => previousAmount + (currentAmount.price * currentAmount.quantity)
+  const amountReducer = (previousAmount, currentAmount) => previousAmount + (currentAmount.price * currentAmount.qty)
   const cartTotalAmount = cartProducts.reduce(amountReducer, 0)
 
-  const qunatityReducer = (previousProd, currentProd) => currentProd.quantity + previousProd
+  const qunatityReducer = (previousProd, currentProd) => currentProd.qty + previousProd
   const cartProductQuantity = cartProducts.reduce(qunatityReducer, 0)
 
 

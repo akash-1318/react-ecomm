@@ -1,13 +1,21 @@
 import "./productCard.css";
+import axios from "axios";
+import {useNavigate} from 'react-router-dom'
+import {addToWishlist, deleteWishlistData} from '../../pages/wishlist/wishlist-functions'
+import {addtoCart, removeFromCart} from '../../pages/cart/cart-functions'
 import { useWishContext } from "../../contexts/wishlist-context";
 import { useCartContext } from "../../contexts/cart-context";
+import { useAuthContext } from "../../contexts/auth-context";
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate()
   const { wishState, wishDispatch } = useWishContext();
   const {cartState, cartDispatch} = useCartContext();
+  const {authCred}  = useAuthContext();
+  const {authToken, authStatus} = authCred
   const {cartProducts} = cartState
   const { wishlistProducts } = wishState;
-  
+
   return (
     <>
       <div className="card prod__card">
@@ -22,7 +30,7 @@ export default function ProductCard({ product }) {
           {wishlistProducts.find((prod) => prod._id === product._id) ? (
             <div class="like__product product__liked"
             onClick={() =>
-              wishDispatch({ type: "REMOVE_FROM_WISHLIST", payload: product })
+              deleteWishlistData(product,wishDispatch,authToken, authStatus)
             }
             >
               <i class="bx bxs-heart"></i>
@@ -30,8 +38,14 @@ export default function ProductCard({ product }) {
           ) : (
             <div
               className="like__product"
-              onClick={() =>
-                wishDispatch({ type: "ADD_TO_WISHLIST", payload: product })
+              onClick={() =>{
+                if(authStatus){
+                  addToWishlist(product,wishDispatch,authToken, authStatus)
+                } else{
+                  navigate('/login')
+                }
+              }
+                
               }
             >
               <i className="bx bx-heart"></i>
@@ -44,15 +58,26 @@ export default function ProductCard({ product }) {
               ₹ {product.price}
             </p>
             {cartProducts.find((cartProd) => cartProd._id === product._id) ? (
-              <button className="btn solid__primary prod__card-btn" onClick={() => cartDispatch({type : "REMOVE_FROM_CART", payload : product})}>
+              <button className="btn solid__primary prod__card-btn" 
+              // onClick={() => cartDispatch({type : "REMOVE_FROM_CART", payload : product})}
+              onClick = {() => removeFromCart(product, cartDispatch, authToken)}
+              >
               Remove From Cart
             </button>
             ) : (
-              <button className="btn solid__secondry prod__card-btn" onClick={() => cartDispatch({type : "ADD_TO_CART", payload : product})}>
+              <button className="btn solid__secondry prod__card-btn" 
+              // onClick={() => cartDispatch({type : "ADD_TO_CART", payload : product})}
+              onClick={() => {
+                if(authStatus){
+                  addtoCart(product, cartDispatch, authToken)
+                } else{
+                  navigate('/login')
+                }
+              }}
+              >
               Add To Cart
             </button>
             )}
-            
           </div>
         </div>
       </div>
