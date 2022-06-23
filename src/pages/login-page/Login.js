@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Navigation } from "../../components/navigation/navigation";
 import { useAuthContext } from "../../contexts/auth-context";
+import {toast} from "react-toastify"
 
 export default function Login() {
   const navigate = useNavigate();
@@ -25,8 +26,9 @@ export default function Login() {
         localStorage.setItem("TOKEN", encodedToken);
         setAuthCred({ ...authCred, authToken: encodedToken, authStatus: true });
         navigate("/");
+        toast.success("You have logged in");
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
   };
 
@@ -66,13 +68,6 @@ export default function Login() {
               <i class='bx bx-hide' onClick = {() => setPasswordType(!passwordType)}></i>
             )}
           </div>
-          <div className="cred__remember-forgot">
-            <div className="remember__checkbox">
-              <input type="checkbox" />
-              <label>Remember me</label>
-            </div>
-            <div className="forgot__password">Forgot your password?</div>
-          </div>
           <button type="submit" className="btn solid__primary cred__button">
             Login
           </button>
@@ -80,8 +75,8 @@ export default function Login() {
             className="btn solid__primary cred__button"
             onClick={(e) =>
               loginHandler({
-                email: "adarshbalika@gmail.com",
-                password: "adarshbalika",
+                email: "akashsharma@gmail.com",
+                password: "akashsharma123",
               })
             }
           >

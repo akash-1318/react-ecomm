@@ -4,6 +4,7 @@ import { useProductContext } from "../../contexts/product-context";
 import { useWishContext } from "../../contexts/wishlist-context";
 import { useCartContext } from "../../contexts/cart-context";
 import { useAuthContext } from "../../contexts/auth-context";
+import {toast} from "react-toastify"
 
 function Navigation() {
   const navigate = useNavigate();
@@ -29,7 +30,8 @@ function Navigation() {
   const logout = () => {
     localStorage.clear();
     setAuthCred({ ...authCred, authToken: null, authStatus: false });
-    navigate(0);
+    navigate("/");
+    toast.success("You have logged out")
   };
 
   return (
@@ -66,16 +68,11 @@ function Navigation() {
           >
             <p>Kids</p>
           </Link>
-          <Link to="" className="nav__link-style">
-            <p>Home & Living</p>
+          <Link to="/products" className="nav__link-style"
+          onClick={() => dispatch({type : "ALL_TYPE", payload : ""})}
+          >
+            <p>All</p>
           </Link>
-        </div>
-
-        <div className="header__nav-middle">
-          <div className="search__icon">
-            <i className="bx bx-search-alt-2"></i>
-          </div>
-          <input placeholder="search" className="header__search" />
         </div>
 
         <div className="header__nav-right">
