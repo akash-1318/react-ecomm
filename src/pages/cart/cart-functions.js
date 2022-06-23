@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const addtoCart = async (product, cartDispatch, authToken) => {
   cartDispatch({ type: "UPDATE_CART" });
@@ -12,6 +13,7 @@ const addtoCart = async (product, cartDispatch, authToken) => {
         },
       }
     );
+    toast.success("Product added to cart")
   } catch (err) {
     console.log(err);
   }
@@ -26,6 +28,7 @@ const removeFromCart = async (product, cartDispatch, authToken) => {
     });
     cartDispatch({ type: "REMOVE_FROM_CART", payload: product });
     cartDispatch({ type: "UPDATE_CART" });
+    toast.success("Product removed from cart")
   } catch (err) {
     console.log(err);
   }

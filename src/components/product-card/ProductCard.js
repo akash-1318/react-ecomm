@@ -8,6 +8,7 @@ import { addtoCart, removeFromCart } from "../../pages/cart/cart-functions";
 import { useWishContext } from "../../contexts/wishlist-context";
 import { useCartContext } from "../../contexts/cart-context";
 import { useAuthContext } from "../../contexts/auth-context";
+import {toast} from "react-toastify"
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();

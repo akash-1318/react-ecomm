@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "../../components/navigation/navigation";
 import { useAuthContext } from "../../contexts/auth-context";
+import {toast} from "react-toastify"
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -24,8 +25,9 @@ export default function SignUp() {
     lastname,
     email,
     password,
+    confirmPassword
   }) => {
-    if(firstname !== "" && lastname !== "" && email !== "" && password !== ""){
+    if(firstname !== "" && lastname !== "" && email !== "" && password !== "" && password === confirmPassword){
       try {
         const {
           data: { encodedToken },
@@ -38,11 +40,12 @@ export default function SignUp() {
         localStorage.setItem("TOKEN", encodedToken);
         setAuthCred({ ...authCred, authToken: encodedToken, authStatus: true });
         navigate("/");
+        toast.success("Successfully Signed In");
       } catch (err) {
         console.log(err);
       }
     } else{
-      alert("Please fill out the fields")
+      toast.error("Every field require")
     }
   };
 
@@ -113,7 +116,7 @@ export default function SignUp() {
                   confirmPassword: e.target.value,
                 })
               }
-              className = {`${signupCred.password !== signupCred.confirmPassword ? "wrong__input" : ""}`}
+              className = {`${signupCred.password !== signupCred.confirmPassword && signupCred.confirmPassword !== "" ? "wrong__input" : ""}`}
             ></input>
             {confPasswordType ? (
               <i className="bx bx-show" onClick = {() => setConfPasswordType(!confPasswordType)}></i>
@@ -121,13 +124,7 @@ export default function SignUp() {
               <i class='bx bx-hide' onClick = {() => setConfPasswordType(!confPasswordType)}></i>
             )}
           </div>
-          <div className="cred__remember-forgot">
-            <div className="remember__checkbox">
-              <input type="checkbox" />
-              <label>Accept all terms & conditions</label>
-            </div>
-          </div>
-          <button type="submit" className="btn solid__primary cred__button" disabled = {signupCred.password !== signupCred.confirmPassword}>
+          <button type="submit" className="btn solid__primary cred__button">
             Signup
           </button>
           <Link to="/login">
